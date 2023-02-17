@@ -45,7 +45,7 @@ bot.on('message', async (msg) => {
 async function getChannelIdFromLink(link) {
   try{
     const channelName = link
-  const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=id%2Csnippet&maxResults=10&q=${channelName}&type=channel&key=AIzaSyC6b7QXb9cqfZCIyayB2vgjfCMdMm9D2CE`);
+  const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=id%2Csnippet&maxResults=10&q=${channelName}&type=channel&key=${youtubeApiKey}`);
   return response.data.items[0].id.channelId;
   } catch (error) {
     console.error(error.message);
